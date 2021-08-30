@@ -1,4 +1,4 @@
-package main.fpij.cap2;
+package main.fpij.cap2.iterating;
 
 import java.util.Arrays;
 import java.util.List;

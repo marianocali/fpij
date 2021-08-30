@@ -1,17 +1,14 @@
-package main.fpij.cap2;
+package main.fpij.cap2.iterating;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ForEachLamba2 {
+public class ForEachwithLambaWithoutType {
 
     public static void main(String[] args) {
         final List<String> friends = Arrays.asList("Brian", "Neat", "Neal", "Raju", "Sara", "Scott");
 
-        friends.forEach(name ->
+        friends.forEach((name) ->
                 System.out.println(name));
     }
 }
-
-
-
