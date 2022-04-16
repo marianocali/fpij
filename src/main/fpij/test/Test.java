@@ -96,7 +96,7 @@ public class Test {
 
 //        Pattern pat = Pattern.compile("abc");             //exactamente el patrón (matches) “abc”
 //        Pattern pat = Pattern.compile(".*abc.*");         //contiene “abc”  fabcd si afbcd no
-//        Pattern pat = Pattern.compile("^abc.*");          //empieza por abd
+//        Pattern pat = Pattern.compile("^abc.*");          //empieza por abc
 //        Pattern pat = Pattern.compile("^[aA]bc.*");       //empieza por “abc” ó “Abc”
 //        Pattern pat = Pattern.compile("[a-zA-Z]{5,10}");  //formado por un mínimo de 5 letras mayúsculas o minúsculas y un máximo de 10
 //        Pattern pat = Pattern.compile("[\\d]*");          //contiene solo dígitos
