@@ -3,7 +3,7 @@ package main.fpij.cap2.transforminglist;
 import java.util.Arrays;
 import java.util.List;
 
-public class Ex4CountingElements {
+public class Ex4CountingSizeElements {
 
     public static void main(String[] args) {
 
