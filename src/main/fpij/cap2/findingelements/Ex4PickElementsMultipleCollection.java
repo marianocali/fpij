@@ -14,13 +14,22 @@ public class Ex4PickElementsMultipleCollection {
         final Predicate<String> startWithN = name -> name.startsWith("N");
 
         final long countFriendsStartN =
-                friends.stream().filter(startWithN).count();
+                friends
+                .stream()
+                .filter(startWithN)
+                .count();
 
         final long countComradesStartN =
-                comrades.stream().filter(startWithN).count();
+                comrades
+                .stream()
+                .filter(startWithN)
+                .count();
 
         final long countEditorsStartN =
-                editors.stream().filter(startWithN).count();
+                editors
+                .stream()
+                .filter(startWithN)
+                .count();
 
         System.out.println("countFriendsStartN: " + countFriendsStartN + "\n" +
                 "countComradesStartN: " + countComradesStartN + "\n" +

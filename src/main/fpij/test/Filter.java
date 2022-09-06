@@ -82,21 +82,7 @@ public class Filter {
                 .count());
     }
 
-    final static Function<String, Predicate<String>> startsWithLetter =
-            letter -> name -> name.startsWith(letter);
 
-    //counting elements that start with N or B
-    public static long countElementsStartingWithN(){
-        return friends.parallelStream()
-                .filter(startsWithLetter.apply("N") )
-                .count();
-    }
-
-    public static long countElementsStartingWithB(){
-        return friends.parallelStream()
-                .filter(startsWithLetter.apply("B"))
-                .count();
-    }
 
     public static java.util.stream.IntStream getArrayWithStringLength(){
 

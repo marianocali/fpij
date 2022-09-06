@@ -11,6 +11,20 @@ public class Ex5PickDifferentNames {
         final List<String> comrades = Arrays.asList("Kate", "Ken", "Nick", "Paula", "Zach");
         final List<String> editors = Arrays.asList("Brian", "Jackie", "John", "Mike");
 
+
+        // creamos un predicado que usamos para filtrar las listas por nombre
+        System.out.println("filtering with Predicate by Names");
+        final Predicate<String> nameJohnOrJackie = name ->name.equals("John") || name.equals("Jackie") || name.equals("Paula");
+
+        comrades.stream()
+                .filter(nameJohnOrJackie)
+                .forEach(System.out::println);
+        editors.stream()
+               .filter(nameJohnOrJackie)
+                .forEach(System.out::println);
+
+        //creamos un predicado para filtrar por letras
+        System.out.println("filtering with Predicate by Letter and counting");
         final Predicate<String> startWithN = name -> name.startsWith("N");
         final Predicate<String> startWithB = name -> name.startsWith("B");
 
@@ -31,4 +45,5 @@ public class Ex5PickDifferentNames {
                 "countEditorsStartB: " + countEditorsStartB);
 
     }
+
 }
