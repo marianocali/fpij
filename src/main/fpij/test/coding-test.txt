@@ -112,7 +112,9 @@ Note: This list is for internal manipulation and should not be part of the outpu
 Your program must support an arbitrary value for N, but for your example output
 you may use 25.
 
-Step 2 - After you have built this list of N names, print as output of your program a new list that contains N modified names. This  These modified names should only use first names and last names from the original N names.  However, the new list and the old list should not share any full names.
+Step 2 - After you have built this list of N names, print as output of your program a new list that contains N modified names.
+This  These modified names should only use first names and last names from the original N names.
+However, the new list and the old list should not share any full names.
 
 Note: Each first name and last name should be used exactly once (see example of incorrect answer below with "Carl" being used multiple times)
 

@@ -20,7 +20,7 @@ public class Ex9PickUpName {
                         .filter(name -> name.startsWith(letter))
                         .findFirst();
 
-        System.out.println("The first name found with letter" + letter + " is " + friendFound.orElse("no friend found"));
+        System.out.println("The first name found with letter " + letter + " is " + friendFound.orElse("no friend found"));
 
 //        System.out.println(String.format("The first name found with letter %s %s %s ", letter , " is " , friendFound.orElse("no friend found")));
 

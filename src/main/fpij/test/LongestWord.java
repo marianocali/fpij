@@ -7,10 +7,11 @@ public class LongestWord {
     //Example input: fun&!! timeless proce -> timeless
     //Example input: fun&!! time processing -> processing
     public static void main(String[] args) {
-        String input = "fun&!! time processing";
-        longestWord(input);
+//        String input = "fun&!! timeles proc";
+        String input = "I love dogs";
+        System.out.println(longestWord(input));
     }
-    public static void longestWord(String sen){
+    public static String longestWord(String sen){
         int positionEmpty = sen.indexOf(" ");
         String longestWord = "";
         String rightString = sen;
@@ -26,7 +27,7 @@ public class LongestWord {
         if(rightString.length() > longestWord.length()){
             longestWord = rightString;
         }
-        System.out.println(longestWord);
+        return longestWord;
     }
 
     static String longest = "";
