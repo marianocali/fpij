@@ -12,8 +12,8 @@ public class Ex15 {
 
     public static void main(String[] args) {
         Set set = new HashSet();
-        set.add(new Long(10));
-        set.add(new Integer(10));
+        set.add(Long.valueOf(10));
+        set.add(Long.valueOf(10));
 
         for (Object object : set) {
             System.out.println("Test - " + object);
