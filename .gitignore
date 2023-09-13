@@ -28,5 +28,4 @@ nbdist/
 /out/
 /.directory
 /logs/
-/src/main/java/com/prismamp/todopago/handler/.directory
 /src/main/resources/application.yml

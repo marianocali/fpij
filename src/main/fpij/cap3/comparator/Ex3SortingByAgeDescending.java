@@ -1,6 +1,7 @@
 package main.fpij.cap3.comparator;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,12 +12,19 @@ public class Ex3SortingByAgeDescending {
             new Person("Jane", 21),
             new Person("Greg", 35));
 
+    static Comparator<Person> compareAscending = (person1, person2) -> person1.ageDifference(person2);
+    static Comparator<Person>  compareDescending = compareAscending.reversed();
+
+    public static void sortingListDescending(){
+        List<Person> orderedPerson = people.
+                stream()
+                .sorted(compareDescending)
+                .collect(Collectors.toList());
+        System.out.printf("orderedPerson: " + orderedPerson);
+    }
+
     public static void main(String[] args) {
-        List<Person> peopleSortedDesdending =
-                people.stream()
-                        .sorted((person1, person2)-> person2.ageDifference(person1))
-                        .collect(Collectors.toList());
-        printPeople("Sorted people descendig by age", peopleSortedDesdending);
+        sortingListDescending();
     }
 
     public static void printPeople(String message, List<Person> people){

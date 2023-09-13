@@ -8,4 +8,4 @@ to compile:
 javac javac main/fpij/cap1/BetterWay.java
 
 to run:
-java main.fpij.cap1.BetterWay
+ java main.fpij.cap1.BetterWay

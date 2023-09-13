@@ -1,33 +1,30 @@
 package main.fpij.test;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Test2 {
-    final static List<String> friends = Arrays.asList("Brian", "Neat", "Neal", "Raju", "Sara", "Scott");
+
 
     public static void main(String[] args) {
-//        lengths();
-        nameMoreLengths();
-        sumLengthOfAllElements();
-
-    }
-
-    public static void lengths(){
-        friends.stream()
-                .map(name -> name.length())
-                .forEach(count -> System.out.print(count + " "));
-    }
-
-    public static void nameMoreLengths(){
-        friends.stream()
-                .forEach(name -> System.out.println(name + ": " + name.length()));
-    }
-
-    public static void sumLengthOfAllElements(){
-        System.out.print(friends.stream()
-                .mapToInt(elem -> elem.length())
-                .sum());
-
+        String x = "aabaa";
+        char ch = x.charAt(0);
+        int nroR = 1;
+        String result = "";
+        for(int i=1;i < x.length(); i++){
+            System.out.println( "\n  i: " +i + " ch:" + ch +   " x.charAt(i): "  + x.charAt(i));
+            if(ch == x.charAt(i)){
+                System.out.println("son iguales");
+                nroR++;
+                if(i +1 == x.length()){
+                    result = result + nroR + String.valueOf(ch);
+                }
+            }else {
+                // System.out.println("son distintos");
+                result = result + nroR + String.valueOf(ch);
+                ch = x.charAt(i);
+                nroR = 1;
+                // System.out.println("result: " + result + " ch: " + ch);
+            }
+            //result = result + nroR + String.valueOf(ch);
+        }
+        System.out.println("result:" + result);
     }
 }
