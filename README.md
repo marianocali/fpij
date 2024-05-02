@@ -2,9 +2,9 @@
 functional programming in java from Venkat Subramanian 
 
 ### In order to run by console the examples:
- go to the parent folder
+ go to the src folder: 
 
-cd /home/mariano.cali/java/fpij/src
+cd fpij/src
 to compile:
 javac javac main/fpij/cap1/BetterWay.java
 
