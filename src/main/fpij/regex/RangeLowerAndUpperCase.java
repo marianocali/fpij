@@ -60,6 +60,7 @@ public class RangeLowerAndUpperCase {
     //receive a list of Strings and return only Strings that are lower and upperCase refuse any String with digits or non alphabetic character
     //Example
     public static void filterLowerAndUpperCaseFromList(List<String> list) {
+        System.out.println("input list: " + list);
         System.out.print("filterLowerAndUpperCaseFromList: ");
         Pattern pattern = Pattern.compile(regex);
         List<String> matching = list.stream()
@@ -70,7 +71,8 @@ public class RangeLowerAndUpperCase {
     }
 
     public static void filterLowerAndUpperCaseFromList2(List<String> list) {
-        System.out.print("filterLowerAndUpperCaseFromList: ");
+        System.out.println("input list: " + list);
+        System.out.print("filterLowerAndUpperCaseFromList2: ");
         List<String> matching = list.stream()
                 .filter(Objects::nonNull)
                 .filter(s-> s.matches(regex))

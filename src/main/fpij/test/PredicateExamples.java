@@ -41,6 +41,8 @@ public class PredicateExamples {
         pred(10, mayorQue);
 
         predicate_or();
+
+        predicateOnNumber(10, (i) -> i > 7);
     }
     //Example 4: Predicate OR
     public static Predicate<String> hasLengthOf10 = new Predicate<String>() {
@@ -59,5 +61,14 @@ public class PredicateExamples {
         boolean outcome = hasLengthOf10.or(containsLetterA).test(containsA);
         System.out.println(outcome);
     }
+
+
+        public static void predicateOnNumber(int number, Predicate<Integer> predicate)
+        {
+            if (predicate.test(number)) {
+                System.out.println("Number " + number);
+            }
+        }
+
 
 }

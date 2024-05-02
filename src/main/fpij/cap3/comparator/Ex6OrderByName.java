@@ -5,7 +5,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 
-public class Ex6OrderByName {    final static List<Person> people = Arrays.asList(
+public class Ex6OrderByName {
+    final static List<Person> people = Arrays.asList(
         new Person("John", 20),
         new Person("Sara", 21),
         new Person("Jane", 21),

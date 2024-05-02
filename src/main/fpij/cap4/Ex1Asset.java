@@ -19,6 +19,11 @@ public class Ex1Asset {
                 .sum();
     }
 
+    public static int totalStockAsset(final List<Asset> assets){
+        return assets.stream()
+                .mapToInt(asset -> asset.getType() == AssetType.STOCK ? asset.getValue() : 0)
+                .sum();
+    }
 
     public static void main(String[] args){
         final List<Asset> assets = Arrays.asList(
@@ -29,7 +34,7 @@ public class Ex1Asset {
         );
         System.out.println("Total of all assets: " + totalAssetValues(assets));
         System.out.println("Total of all bond assets: " + totalBondAsset(assets));
-
+        System.out.println("Total of all stock assets:" + totalStockAsset(assets));
     }
 
 }
