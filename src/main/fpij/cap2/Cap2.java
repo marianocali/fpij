@@ -12,21 +12,26 @@ import java.util.stream.Collectors;
 public class Cap2 {
     final static List<String> friends = Arrays.asList("Brian", "Neat", "Neal", "Raju", "Sara", "Scott");
 
+    private static String someString = "a";
+
     public static void lengths(){
         friends.stream()
                 .map(name -> name.length())
                 .forEach(count -> System.out.print(count + " "));
     }
 
+//    @RolesAllowed(value={Role.SYS_ADMIN_R_VALUE, Role.USER_R_VALUE, Role.RESELLER_R_VALUE})
     public static void nameMoreLengths(){
         friends.stream()
                 .forEach(name -> System.out.println(name + ": " + name.length()));
     }
 
-    public static void sumLengthOfAllElements(){
+    public static String sumLengthOfAllElements(){
         System.out.print(friends.stream()
                 .mapToInt(elem -> elem.length())
                 .sum());
+
+        return someString;
 
     }
 
@@ -59,13 +64,13 @@ public class Cap2 {
     public static void startWithSomeLetter(){
         String letterB = "B";
         String letterN = "N";
-        System.out.print("friends starting with " + letterB + " " +
+        System.out.println("friends starting with " + letterB + " " +
                 friends.stream()
                         .filter(startWithLetter.apply(letterB))
                         .collect(Collectors.toList())
                 );
 
-        System.out.print("\nfriends starting with " + letterN + " " +
+        System.out.println("\nfriends starting with " + letterN + " " +
                 friends.stream()
                         .filter(startWithLetter.apply(letterN))
                         .collect(Collectors.toList())
@@ -75,13 +80,13 @@ public class Cap2 {
     public static void countFriendsStartingWithLetter(){
         String letterB = "B";
         String letterN = "N";
-        System.out.print("# friends starting with " + letterB + ": " +
+        System.out.println("# friends starting with " + letterB + ": " +
                 friends.stream()
                         .filter(startWithLetter.apply(letterB))
                         .count()
                 );
 
-        System.out.print("\n# frineds starting with letter " + letterN + ": " +
+        System.out.println("\n# friends starting with letter " + letterN + ": " +
                 friends.stream()
                         .filter(startWithLetter.apply(letterN))
                         .count()
@@ -110,7 +115,7 @@ public class Cap2 {
         Integer number = friends.stream()
                 .mapToInt(elem-> elem.length())
                 .sum();
-        System.out.printf("number of elements: " + number);
+        System.out.println("number of elements: " + number);
     }
 
     public static void pickLongest(){

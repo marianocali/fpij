@@ -9,13 +9,13 @@ import java.util.stream.Stream;
 
 public class GetNamesStatistics {
 
-
     private static int index = 0;   //used to take the lines with data
-    private static HashMap<String, Integer> firstNames = new HashMap<>();
-    private static TreeMap<String, Integer> lastNames = new TreeMap<>();
-    private static TreeMap<String, Integer> fullNames = new TreeMap<>();
-    private static TreeMap<String, Integer> newNames = new TreeMap<>();
-
+    private static final HashMap<String, Integer> firstNames = new HashMap<>();
+    private static final TreeMap<String, Integer> lastNames = new TreeMap<>();
+    private static final TreeMap<String, Integer> fullNames = new TreeMap<>();
+    private static final ArrayList newNames = new ArrayList();
+    private static ArrayList<String> modifiedNames = new ArrayList<>();
+    private static final ArrayList<FullName> originalNames = new ArrayList();
     public static void main(String[] args) {
         processFile();
     }
@@ -40,8 +40,9 @@ public class GetNamesStatistics {
 
         mostCommonLastNames();
         mostCommonFirstNames();
-        createNewNames();
-
+//        modifiedNames();
+//      print new names
+//      newNames.forEach(System.out::println);
     }
 
     private static void mostCommonFirstNames() {
@@ -93,10 +94,12 @@ public class GetNamesStatistics {
         firstName = line.substring(firstNameStartingPosition, firstNameEndingPosition);
 
         if(firstName.matches(regex) && lastName.matches(regex)) {
+            originalNames.add(new FullName(firstName, lastName));
+            createNewNames(firstName, lastName);
             countFirstNames(firstName);
             countLastNames(lastName);
             countFullNames(firstName, lastName);
-            createNewNames();
+            createModifiedNames();
         }
     }
 
@@ -141,11 +144,86 @@ public class GetNamesStatistics {
 
      . No previous name in the new list has the same first name.
      . No previous name in the new list has the same last name.
-     These modified names should only use first names and last names from the original N names.
-     However, the new list and the old list should not share any full names.
-     */
-    private static void createNewNames() {
+     For example, consider these names:
 
+     Smith, Joan
+     Smith, John
+     Smith, Sam
+     Thomas, Joan
+     Upton, Joan
+     Upton, Tom
+     Vasquez, Cesar
+
+     These names would be part of the new list:
+
+     Smith, Joan
+     Upton, Tom
+     Vasquez, Cesar
+
+     These names would not:
+
+     Smith, John     # Already have a last name "Smith"
+     Smith, Sam      # Already have a last name "Smith"
+     Thomas, Joan    # Already have a first name "Joan"
+     Upton, Joan     # Already have a first name "Joan"
+
+
+     Step 2 - After you have built this list of N names, print as output of your program a new list that contains N modified names.
+     This  These modified names should only use first names and last names from the original N names.
+     However, the new list and the old list should not share any full names.
+
+     Note: Each first name and last name should be used exactly once (see example of incorrect answer below with "Carl" being used multiple times)
+
+     For example, if the file contains the names:
+
+     Brutananadilewski, Carl
+     Crews, Xander
+     Cartman, Eric
+     ... 22 more names if N=25 ...
+
+     Then this is a valid output:
+
+     Brutananadilewski, Eric
+     Crews, Carl
+     Cartman, Xander
+     ... 22 more names if N=25 ...
+
+     But this is not (because "Barney" and "Bambam" weren't in the original file):
+
+     Brutananadilewski, Fred
+     Crews, Barney
+     Cartman, Bambam
+     ... 22 more names if N=25 ...
+
+     This is also incorrect (because "Cartman, Eric" is unchanged):
+
+     Brutananadilewski, Xander
+     Crews, Carl
+     Cartman, Eric
+     ... 22 more names if N=25 ...
+
+     This is also incorrect (because "Carl" is used multiple times):
+
+     Brutananadilewski, Xander
+     Crews, Carl
+     Cartman, Carl
+     ... 22 more names if N=25 ...
+
+     */
+    private static void createModifiedNames() {
+        for (int i =0; i<originalNames.size(); i++){
+
+        }
+//        if(!firstNames.containsKey(firstName) && !lastNames.containsKey(firstName)
+//        && (!newNames.contains(lastName + ", " + firstName))) {
+//              modifiedNames.add()
+//            System.out.println("createModifiedNames");
+        }
+
+    private static void createNewNames(String firstName, String lastName) {
+        if(!firstNames.containsKey(firstName) && !lastNames.containsKey(lastName)){
+            newNames.add(lastName + ", " + firstName);
+        }
     }
 
 

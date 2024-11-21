@@ -1,11 +1,13 @@
-package main.fpij.cap3;
+package main.fpijPrueba3.java.cap3;
 
 import main.fpij.cap3.comparator.Person;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiPredicate;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Cap3 {
@@ -15,14 +17,13 @@ public class Cap3 {
             new Person("Alice", 15),
             new Person("Jane", 29),
             new Person("Scott", 35),
-            new Person("Greg", 37),
-            new Person("Mariano", 45));
+            new Person("Greg", 37));
+//            new Person("Mariano", 45));
 
 
     static Function<Integer, String> verboseLambda = (Integer x)-> { return Integer.toString(x*x); };
 
     static Function<Integer, String> conciseLambda = (Integer x)-> { return Integer.toString(x*x); };
-
 
     public static void sortPeople(){
         List<Person> sortedPeople = people.stream()
@@ -57,8 +58,27 @@ public class Cap3 {
                         .collect(Collectors.toList());
         sortedPerson.forEach(System.out::println);
     }
+
+    public static void printBySubList(){
+
+        int min = 0;
+        int max = 2;
+        int incremento = 2;
+        while(max <= people.size()){
+            min = max;
+            max = max + incremento;
+        }
+        if(max > people.size()){
+            people.subList(min,people.size()).forEach(System.out::println);
+        }
+
+    }
+
+
+
     public static void main(String[] args) {
 
+        printBySubList();
 //        youngestPerson();
 //        sortPeople();
 //        sortPeopleMethodReference();
@@ -71,6 +91,6 @@ public class Cap3 {
 //                                person1.getName().length() >= person2.getName().length() ? person1 : person2);
 //        System.out.printf("steveOrLonger: " + steveOrLonger);
 //        sortByName();
-        sortingByNameAndAge();
+//        sortingByNameAndAge();
     }
 }

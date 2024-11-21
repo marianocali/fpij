@@ -17,5 +17,9 @@ public class Ex9GroupingByAge {
                 people.stream()
                         .collect(Collectors.groupingBy(Person::getAge));
         System.out.printf("People grouped by age: " + personByAge);
+
+        personByAge.forEach((k,v) ->
+                System.out.println("key:" + k + " value: " + v));
+
     }
 }

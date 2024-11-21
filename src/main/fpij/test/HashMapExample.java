@@ -1,6 +1,7 @@
 package main.fpij.test;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class HashMapExample {
 
@@ -20,6 +21,7 @@ public class HashMapExample {
         //To find out how many items there are, use the size()
         System.out.println("capitalCities size: " + capitalCities.size());
         loopThroughHashMap();
+        printNotNullsValues();
 
     }
 
@@ -30,11 +32,7 @@ public class HashMapExample {
         capitalCities.forEach((key, value)-> System.out.print(key + " "));
 
         System.out.println();
-        System.out.println("hashMap values" );
-        //        for (String i : capitalCities.keySet()) {
-//            System.out.print(i + " ");
-//        }
-
+        System.out.print("hashMap values: " );
         System.out.print(String.join(", ",capitalCities.values()));
     }
 
@@ -59,7 +57,17 @@ public class HashMapExample {
         capitalCities.put("Germany", "Berlin");
         capitalCities.put("Norway", "Oslo");
         capitalCities.put("USA", "Washington DC");
+        capitalCities.put(null, null);
+
     }
 
+    public static void printNotNullsValues(){
+        System.out.println();
+        System.out.println("NotNullsValues ");
+        capitalCities.values().stream()
+                .filter(Objects::nonNull)
+                .forEach(elem-> System.out.print(elem + " "));
+
+    }
 
 }

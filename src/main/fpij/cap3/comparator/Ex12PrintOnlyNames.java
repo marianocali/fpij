@@ -16,21 +16,24 @@ public class Ex12PrintOnlyNames {
             new Person("Greg", 35));
 
 
-    public static void main(String... args) {
+    /*public static void main(String... args) {
         BigDecimal a = new BigDecimal(5);
         BigDecimal b = new BigDecimal(3);
         BigDecimal result = a.divide(b, 2, RoundingMode.HALF_UP);
         System.out.println(result);
 
     }
-    /*public static void main(String[] args) {
-        List<String> namesOfPeople = people.stream()
-                .collect(Collectors.mapping(Person::getName, Collectors.toList()));
-
-//        System.out.println(namesOfPeople);
-        filteringExample();
-    }
     */
+
+    public static void main(String[] args) {
+        List<String> namesOfPeople = people.stream()
+                .map(Person::getName)
+                .collect(Collectors.toList());
+
+        System.out.println(namesOfPeople);
+//        filteringExample();
+    }
+
 
 
     public static void filteringExample(){
